@@ -2,7 +2,7 @@
 connection: "redshift_pacific_time"
 
 # include all the views
-include: "/views/**/*.view"
+include: "/Views/**/*.view"
 
 datagroup: cmslite_metadata_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
