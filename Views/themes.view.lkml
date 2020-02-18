@@ -20,6 +20,12 @@ view: themes {
     sql: ${TABLE}.node_id ;;
   }
 
+  dimension: parent_node_id {
+    description: "The alphanumeric CMS Lite node identifier of the parent node."
+    type: string
+    sql: ${TABLE}.parent_node_id ;;
+  }
+
   dimension: subtheme {
     description: "The CMS Lite subtheme."
     type: string
@@ -42,6 +48,11 @@ view: themes {
   dimension: title {
     type: string
     sql: ${TABLE}.title ;;
+  }
+
+  dimension: parent_title {
+    type: string
+    sql: ${TABLE}.parent_title ;;
   }
 
   dimension: topic {
