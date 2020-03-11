@@ -137,6 +137,108 @@ view: metadata {
     sql: ${TABLE}.updated_date ;;
   }
 
+  dimension: page_status {
+    type: string
+    sql: ${TABLE}.page_status ;;
+  }
+
+  dimension: published_by {
+    type: string
+    sql: ${TABLE}.published_by ;;
+  }
+
+  dimension: created_by {
+    type: string
+    sql: ${TABLE}.created_by ;;
+  }
+
+  dimension: modified_by {
+    type: string
+    sql: ${TABLE}.modified_by ;;
+  }
+
+  dimension: node_level {
+    type: string
+    sql: ${TABLE}.node_level ;;
+  }
+
+  dimension_group: locked {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.locked_date ;;
+  }
+
+  dimension_group: moved {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.moved_date ;;
+  }
+
+  dimension: exclude_from_ia {
+    type: string
+    sql: ${TABLE}.exclude_from_ia ;;
+  }
+
+  dimension: hide_from_navigation {
+    type: string
+    sql: ${TABLE}.hide_from_navigation ;;
+  }
+
+  dimension: exclude_from_search_engines {
+    type: string
+    sql: ${TABLE}.exclude_from_search_engines ;;
+  }
+
+  dimension: security_classification {
+    type: string
+    sql: ${TABLE}.security_classification ;;
+  }
+
+  dimension: security_label {
+    type: string
+    sql: ${TABLE}.security_label ;;
+  }
+
+  dimension_group: publication {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.publication_date ;;
+  }
+
+  dimension: defined_security_groups {
+    type: string
+    sql: ${TABLE}.defined_security_groups ;;
+  }
+
+  dimension: inherited_security_groups {
+    type: string
+    sql: ${TABLE}.inherited_security_groups ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [language_name]
