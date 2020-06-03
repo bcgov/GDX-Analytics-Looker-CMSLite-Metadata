@@ -1,4 +1,4 @@
-# GDX-Analytics-Looker-CMSLite-Metadata
+# GDX Analytics Looker CMSLite Metadata
 
 This is the GDX Analytics project for the CMS Lite Metadata Lookml.
 
@@ -23,11 +23,9 @@ This is the central repository for work by the GDX Analytics Team.
  
 For any questions regarding this project, or for inquiries about starting a new analytics account, please contact the GDX Analytics Team.
  
-## How to Contribute
- 
-If you would like to contribute to the guide, please see our [CONTRIBUTING](CONTRIBUTING.md) guideleines.
- 
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+## Contributors
+
+The GDX Analytics Team are the main contributors to this project and maintain the code.
 
 ## License
 
