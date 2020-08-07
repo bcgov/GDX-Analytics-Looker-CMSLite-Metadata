@@ -67,6 +67,30 @@ view: themes {
     sql: ${TABLE}.topic_id ;;
   }
 
+  dimension: subtopic {
+    description: "The CMS Lite subtopic."
+    type: string
+    sql: ${TABLE}.subtopic ;;
+  }
+
+  dimension: subtopic_id {
+    description: "The alphanumeric CMS Lite subtopic identifier."
+    type: string
+    sql: ${TABLE}.subtopic_id ;;
+  }
+
+  dimension: subsubtopic {
+    description: "The CMS Lite subsubtopic."
+    type: string
+    sql: ${TABLE}.subsubtopic ;;
+  }
+
+  dimension: subsubtopic_id {
+    description: "The alphanumeric CMS Lite subsubtopic identifier."
+    type: string
+    sql: ${TABLE}.subsubtopic_id ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [subtheme_id, themes.subtheme_id, google_pdt.count, themes.count]
