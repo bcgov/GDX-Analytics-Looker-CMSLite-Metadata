@@ -40,3 +40,8 @@ explore: metadata_subjects {}
 explore: microservice_log {}
 
 explore: themes {}
+
+# hidden themes_cache explore supports suggest_explore for theme, subtheme, topic, etc. filters
+explore: themes_cache {
+ hidden: yes
+}
