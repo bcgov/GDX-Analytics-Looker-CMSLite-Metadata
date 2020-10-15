@@ -2,6 +2,13 @@ view: themes {
   sql_table_name: cmslite.themes ;;
   drill_fields: [subtheme_id]
 
+
+  # the COALESCSE expression ensures that a blank value is returned in the
+  # case where the ${TABLE}.subtheme_id value is missing or null; ensurinig that
+  # user attribute filters will continue to work.
+  #
+  # reference - https://docs.aws.amazon.com/redshift/latest/dg/r_NVL_function.html
+
   dimension: subtheme_id {
     primary_key: yes
     description: "The alphanumeric CMS Lite subtheme identifier."
