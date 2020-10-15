@@ -4,7 +4,6 @@ view: themes_cache {
     sql_trigger_value: SELECT MAX(endtime) FROM cmslite.microservice_log  ;;
     distribution_style: all
   }
-  dimension: node_id {}
   dimension: theme_id {}
   dimension: theme {}
   dimension: subtheme_id {}
