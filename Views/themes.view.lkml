@@ -47,7 +47,6 @@ view: themes {
   dimension: theme_id {
     description: "The alphanumeric CMS Lite theme identifer."
     type: string
-    # hidden: yes
     sql: COALESCE(${TABLE}.theme_id,'') ;;
   }
 
