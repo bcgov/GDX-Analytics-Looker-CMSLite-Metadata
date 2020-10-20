@@ -4,6 +4,9 @@ connection: "redshift_pacific_time"
 # include all the views
 include: "/Views/**/*.view"
 
+# include themes_cache explore
+include: "/Explores/themes_cache.explore.lkml"
+
 datagroup: cmslite_metadata_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
