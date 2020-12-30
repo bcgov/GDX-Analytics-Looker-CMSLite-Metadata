@@ -14,6 +14,16 @@ datagroup: cmslite_metadata_default_datagroup {
 
 persist_with: cmslite_metadata_default_datagroup
 
+explore: cmslite_users {
+  persist_for: "2 hours"
+
+  join: group_membership {
+    type:  left_outer
+    sql_on: ${cmslite_users.user_id} = ${group_membership.id} ;;
+    relationship: many_to_one
+  }
+}
+
 explore: audiences {}
 
 explore: content_types {}
