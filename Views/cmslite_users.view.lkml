@@ -1,11 +1,12 @@
 view: cmslite_users {
   sql_table_name: cmslite.user_status ;;
-  drill_fields: [id]
+  drill_fields: [id, user_id, user_name, organization]
 
   dimension: id {
     primary_key: yes
     type: string
     sql: ${TABLE}.id ;;
+    drill_fields: [user_name, user_id]
   }
 
   dimension_group: created_dt {

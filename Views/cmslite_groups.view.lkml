@@ -1,6 +1,6 @@
 view: cmslite_groups {
   sql_table_name: cmslite.cms_group ;;
-  drill_fields: [id]
+  drill_fields: [id, site_key, active]
 
   dimension: id {
     primary_key: yes

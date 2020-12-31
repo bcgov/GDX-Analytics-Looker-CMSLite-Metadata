@@ -75,6 +75,7 @@ view: metadata {
   }
 
   dimension: node_id {
+    primary_key: yes
     type: string
     sql: ${TABLE}.node_id ;;
   }
@@ -257,6 +258,6 @@ view: metadata {
 
   measure: count {
     type: count
-    drill_fields: [language_name]
+    drill_fields: [title]
   }
 }

@@ -1,6 +1,6 @@
 view: group_membership {
   sql_table_name: cmslite.user_group ;;
-  drill_fields: [id]
+  drill_fields: [id, ]
 
   dimension: id {
     primary_key: yes
@@ -40,6 +40,6 @@ view: group_membership {
 
   measure: count {
     type: count
-    drill_fields: [id, group_name]
+    drill_fields: [user_id, group_name]
   }
 }

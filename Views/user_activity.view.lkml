@@ -18,6 +18,7 @@ view: user_activity {
   dimension: activity_type {
     type: string
     sql: ${TABLE}.activity_type ;;
+    drill_fields: [user_idir, group_name, memo, activity_type]
   }
 
   dimension: group_name {
@@ -40,8 +41,13 @@ view: user_activity {
     sql: ${TABLE}.user_idir ;;
   }
 
+  dimension: primary_key {
+    primary_key: yes
+    sql: ${TABLE}.activity_type || ${TABLE}.group_name || ${TABLE}.user_idir ;;
+  }
+
   measure: count {
     type: count
-    drill_fields: [group_name]
-  }
+    drill_fields: [user_idir, group_name]
+}
 }
