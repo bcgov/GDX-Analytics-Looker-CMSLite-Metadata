@@ -54,5 +54,5 @@ view: user_activity {
   measure: count {
     type: count
     drill_fields: [user_idir, group_name]
-}
+  }
 }
