@@ -19,26 +19,31 @@ view: user_activity {
     type: string
     sql: ${TABLE}.activity_type ;;
     drill_fields: [user_idir, group_name, memo, activity_type]
+    description: "The activity that occurred within CMS Lite"
   }
 
   dimension: group_name {
     type: string
     sql: ${TABLE}.group_name ;;
+    description: "The name of the group in CMS Lite"
   }
 
   dimension: memo {
     type: string
     sql: ${TABLE}.memo ;;
+    description: "The description of the activity."
   }
 
   dimension: user_id {
     type: string
     sql: ${TABLE}.user_id ;;
+    description: "The CMS Lite ID of the user."
   }
 
   dimension: user_idir {
     type: string
     sql: ${TABLE}.user_idir ;;
+    description: "The CMS Lite user's IDIR."
   }
 
   dimension: primary_key {

@@ -34,7 +34,7 @@ explore: cmslite_users {
 
   join: group_membership {
     type:  left_outer
-    sql_on: ${cmslite_users.user_id} = ${group_membership.id} ;;
+    sql_on: ${cmslite_users.id} = ${group_membership.user_id} ;;
     relationship: many_to_one
   }
 
@@ -53,6 +53,17 @@ explore: cmslite_groups {
     relationship: many_to_one
   }
 
+  join: user_activity {
+    type:  left_outer
+    sql_on:  ${group_membership.group_name} = ${user_activity.group_name};;
+    relationship: many_to_one
+  }
+
+  join: cmslite_users {
+    type: left_outer
+    sql_on:   ${user_activity.user_id} = ${cmslite_users.id};;
+    relationship: one_to_one
+  }
 }
 
 explore: audiences {}
