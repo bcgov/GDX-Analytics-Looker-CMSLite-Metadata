@@ -47,6 +47,6 @@ view: group_membership {
 
   measure: count {
     type: count
-    drill_fields: [user_idir, group_name]
+    drill_fields: [cmslite_users.user_name, cmslite_users.user_idir]
   }
 }

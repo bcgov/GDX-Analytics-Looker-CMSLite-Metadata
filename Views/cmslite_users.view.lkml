@@ -1,12 +1,12 @@
 view: cmslite_users {
   sql_table_name: cmslite.user_status ;;
-  drill_fields: [id, user_id, user_name, organization]
+  drill_fields: [id, user_idir, user_name, organization]
 
   dimension: id {
     primary_key: yes
     type: string
     sql: ${TABLE}.id ;;
-    drill_fields: [user_name, user_id]
+    drill_fields: [user_name, user_idir]
     description: "The ID of the user in CMS Lite."
   }
 
@@ -42,7 +42,7 @@ view: cmslite_users {
     description: "The status of the user in CMS Lite."
   }
 
-  dimension: user_id {
+  dimension: user_idir {
     type: string
     sql: ${TABLE}.user_id ;;
     description: "The CMS Lite user's IDIR."

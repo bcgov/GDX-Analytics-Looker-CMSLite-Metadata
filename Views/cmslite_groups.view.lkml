@@ -19,6 +19,7 @@ view: cmslite_groups {
     type: string
     sql: ${TABLE}.name ;;
     description: "The name of the group in CMS Lite."
+    drill_fields: [cmslite_users.user_name, cmslite_users.user_idir]
   }
 
   dimension: site_key {

@@ -26,6 +26,7 @@ view: user_activity {
     type: string
     sql: ${TABLE}.group_name ;;
     description: "The name of the group in CMS Lite"
+    drill_fields:[cmslite_users.user_name, user_idir]
   }
 
   dimension: memo {
