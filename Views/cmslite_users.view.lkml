@@ -52,6 +52,7 @@ view: cmslite_users {
     type: string
     sql: ${TABLE}.user_name ;;
     description: "The CMS Lite user's full name and organization."
+    drill_fields: [group_membership.group_name]
   }
 
   measure: count {
