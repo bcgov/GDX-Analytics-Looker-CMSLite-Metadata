@@ -43,6 +43,19 @@ explore: cmslite_users {
     sql_on:  ${cmslite_users.user_idir} = ${user_activity.user_idir};;
     relationship: one_to_one
   }
+
+  join: metadata {
+    type: inner
+    sql_on:  ${cmslite_users.user_idir} = ${metadata.created_by};;
+    relationship: one_to_many
+  }
+
+  join: themes {
+    type: inner
+    sql_on:  ${metadata.node_id} = ${themes.node_id};;
+    relationship: one_to_one
+  }
+
 }
 
 explore: cmslite_groups {
