@@ -46,7 +46,7 @@ explore: cmslite_users {
 
   join: metadata {
     type: inner
-    sql_on:  ${cmslite_users.user_idir} = ${metadata.created_by};;
+    sql_on:  CONCAT('IDIR', ${cmslite_users.user_idir}) = ${metadata.created_by};;
     relationship: one_to_many
   }
 
