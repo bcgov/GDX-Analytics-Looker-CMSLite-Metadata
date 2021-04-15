@@ -7,30 +7,101 @@ include: "/Views/**/*.view"
 # include themes_cache explore
 include: "/Explores/themes_cache.explore.lkml"
 
+explore: users_created {
+  from: cmslite_users
+  persist_for: "24 hours"
 
-explore: cmslite_users {
+  join: created {
+    from: metadata
+    type: left_outer
+    relationship: one_to_many
+    sql_on: CONCAT('IDIR', ${users_created.user_idir}) = ${created.created_by} ;;
+  }
+
+  join: group_membership {
+    type:  left_outer
+    sql_on: ${users_created.id} = ${group_membership.user_id} ;;
+    relationship: one_to_one
+  }
+
+  join: user_activity {
+    type: inner
+    sql_on:  ${users_created.user_idir} = ${user_activity.user_idir};;
+    relationship: one_to_one
+  }
+
+  join: themes {
+    type: inner
+    sql_on:  ${created.node_id} = ${themes.node_id};;
+    relationship: one_to_one
+  }
+
+}
+
+explore: users_modified {
+  from: cmslite_users
+  persist_for: "24 hours"
+
+  join: modified {
+    from: metadata
+    type: left_outer
+    relationship: one_to_many
+    sql_on: CONCAT('IDIR', ${users_modified.user_idir}) = ${modified.modified_by} ;;
+  }
+
+  join: group_membership {
+    type:  left_outer
+    sql_on: ${users_modified.id} = ${group_membership.user_id} ;;
+    relationship: one_to_one
+  }
+
+  join: user_activity {
+    type: inner
+    sql_on:  ${users_modified.user_idir} = ${user_activity.user_idir};;
+    relationship: one_to_one
+  }
+
+  join: themes {
+    type: inner
+    sql_on:  ${modified.node_id} = ${themes.node_id};;
+    relationship: one_to_one
+  }
+
+}
+
+explore: users_published {
+  from: cmslite_users
   persist_for: "24 hours"
 
   join: published {
     from: metadata
     type: left_outer
     relationship: one_to_many
-    sql_on: CONCAT('IDIR', ${cmslite_users.user_idir}) = ${published.published_by} ;;
+    sql_on: CONCAT('IDIR', ${users_published.user_idir}) = ${published.published_by} ;;
   }
 
-  join: created {
-    from: metadata
-    type: left_outer
-    relationship: one_to_many
-    sql_on: CONCAT('IDIR', ${cmslite_users.user_idir}) = ${created.created_by} ;;
+  join: group_membership {
+    type:  left_outer
+    sql_on: ${users_published.id} = ${group_membership.user_id} ;;
+    relationship: one_to_one
   }
 
-  join: modified {
-    from: metadata
-    type: left_outer
-    relationship: one_to_many
-    sql_on: CONCAT('IDIR', ${cmslite_users.user_idir}) = ${modified.modified_by} ;;
+  join: user_activity {
+    type: inner
+    sql_on:  ${users_published.user_idir} = ${user_activity.user_idir};;
+    relationship: one_to_one
   }
+
+  join: themes {
+    type: inner
+    sql_on:  ${published.node_id} = ${themes.node_id};;
+    relationship: one_to_one
+  }
+
+}
+
+explore: cmslite_users {
+  persist_for: "24 hours"
 
   join: group_membership {
     type:  left_outer
@@ -43,6 +114,19 @@ explore: cmslite_users {
     sql_on:  ${cmslite_users.user_idir} = ${user_activity.user_idir};;
     relationship: one_to_one
   }
+
+  join: metadata {
+    type: inner
+    sql_on:  CONCAT('IDIR', ${cmslite_users.user_idir}) = ${metadata.created_by};;
+    relationship: one_to_many
+  }
+
+  join: themes {
+    type: inner
+    sql_on:  ${metadata.node_id} = ${themes.node_id};;
+    relationship: one_to_one
+  }
+
 }
 
 explore: cmslite_groups {
