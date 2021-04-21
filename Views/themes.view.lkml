@@ -113,9 +113,9 @@ view: themes {
   dimension: is_covid_page {
     type: yesno
     description: "Is this a COVID URL (COVID Theme, BC Recovery Plan, BC Recovery Benefit subtheme, 'covid' in URL"
-    sql: CASE WHEN ${hr_url} LIKE '%covid%'
+    sql: CASE WHEN ${hr_url} ILIKE '%covid%'
         OR ${theme} = 'COVID-19'
-        OR ${subtheme} LIKE '%COVID%'
+        OR ${subtheme} ILIKE '%COVID%'
         THEN TRUE
       ELSE false END ;;
   }
