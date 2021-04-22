@@ -110,6 +110,17 @@ view: themes {
     sql: COALESCE(${TABLE}.subsubtopic_id,'') ;;
   }
 
+  dimension: is_covid_page {
+    type: yesno
+    description: "Is this a COVID URL (COVID Theme, BC Recovery Plan, BC Recovery Benefit subtheme, 'covid' in URL"
+    sql: CASE WHEN ${hr_url} ILIKE '%covid%'
+        OR ${theme} = 'COVID-19'
+        OR ${subtheme} ILIKE '%COVID%'
+        THEN TRUE
+      ELSE false END ;;
+  }
+
+
   measure: count {
     type: count
     drill_fields: [subtheme_id, themes.subtheme_id, google_pdt.count, themes.count]
