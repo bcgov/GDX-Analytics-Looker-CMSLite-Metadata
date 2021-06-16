@@ -74,7 +74,7 @@ explore: users_modified {
 
   join: asset_themes {
     type: inner
-    sql_on:  ${modified.node_id} = ${themes.node_id};;
+    sql_on:  ${modified.node_id} = ${asset_themes.node_id};;
     relationship: one_to_one
   }
 
@@ -111,7 +111,7 @@ explore: users_published {
 
   join: asset_themes {
     type: inner
-    sql_on:  ${published.node_id} = ${themes.node_id};;
+    sql_on:  ${published.node_id} = ${asset_themes.node_id};;
     relationship: one_to_one
   }
 
@@ -146,7 +146,7 @@ explore: cmslite_users {
 
   join: asset_themes {
     type: inner
-    sql_on:  ${metadata.node_id} = ${themes.node_id};;
+    sql_on:  ${metadata.node_id} = ${asset_themes.node_id};;
     relationship: one_to_one
   }
 
