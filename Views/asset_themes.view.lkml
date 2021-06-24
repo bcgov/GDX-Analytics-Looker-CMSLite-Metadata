@@ -1,6 +1,6 @@
 view: asset_themes {
   # # You can specify the table name if it's different from the view name:
-  sql_table_name: test.asset_themes ;;
+  sql_table_name: cmslite.asset_themes ;;
   #
 
   dimension: node_id {
