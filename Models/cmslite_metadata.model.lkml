@@ -36,6 +36,11 @@ explore: users_created {
     relationship: one_to_one
   }
 
+  join: asset_themes {
+    type: inner
+    sql_on:  ${created.node_id} = ${asset_themes.node_id};;
+    relationship: one_to_one
+  }
 }
 
 explore: users_modified {
@@ -64,6 +69,12 @@ explore: users_modified {
   join: themes {
     type: inner
     sql_on:  ${modified.node_id} = ${themes.node_id};;
+    relationship: one_to_one
+  }
+
+  join: asset_themes {
+    type: inner
+    sql_on:  ${modified.node_id} = ${asset_themes.node_id};;
     relationship: one_to_one
   }
 
@@ -98,6 +109,12 @@ explore: users_published {
     relationship: one_to_one
   }
 
+  join: asset_themes {
+    type: inner
+    sql_on:  ${published.node_id} = ${asset_themes.node_id};;
+    relationship: one_to_one
+  }
+
 }
 
 explore: cmslite_users {
@@ -124,6 +141,12 @@ explore: cmslite_users {
   join: themes {
     type: inner
     sql_on:  ${metadata.node_id} = ${themes.node_id};;
+    relationship: one_to_one
+  }
+
+  join: asset_themes {
+    type: inner
+    sql_on:  ${metadata.node_id} = ${asset_themes.node_id};;
     relationship: one_to_one
   }
 
@@ -180,3 +203,5 @@ explore: metadata_subjects {}
 explore: microservice_log {}
 
 explore: themes {}
+
+explore: asset_themes {}
