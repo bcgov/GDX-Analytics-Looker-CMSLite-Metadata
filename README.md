@@ -1,4 +1,6 @@
 # GDX Analytics Looker CMSLite Metadata
+[![Lifecycle:Maturing](https://img.shields.io/badge/Lifecycle-Maturing-007EC6)](<Redirect-URL>)
+---
 
 This is the GDX Analytics project for the CMS Lite Metadata Lookml.
 
