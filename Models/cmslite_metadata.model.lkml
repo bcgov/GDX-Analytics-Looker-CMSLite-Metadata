@@ -174,22 +174,6 @@ explore: cmslite_groups {
   }
 }
 
-explore: metadata {
-  persist_for: "24 hours"
-
-  join: defined_security_groups {
-    type: left_outer
-    sql_on:  ${metadata.node_id} = ${defined_security_groups.node_id};;
-    relationship: one_to_many
-  }
-
-  join: inherited_security_groups {
-    type: left_outer
-    sql_on:  ${metadata.node_id} = ${inherited_security_groups.node_id};;
-    relationship: one_to_many
-  }
-}
-
 explore: audiences {}
 
 explore: content_types {}
@@ -201,6 +185,8 @@ explore: dcterms_languages {}
 explore: dcterms_subjects {}
 
 explore: mbcterms_subject_categories {}
+
+explore: metadata {}
 
 explore: metadata_audiences {}
 
