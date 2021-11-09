@@ -233,6 +233,7 @@ view: metadata {
       year
     ]
     sql: ${TABLE}.publication_date ;;
+    description: "These are nodes that have been mandated by legislation to have an official static publication date."
   }
 
   dimension: defined_security_groups {
