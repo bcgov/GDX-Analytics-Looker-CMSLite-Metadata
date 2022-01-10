@@ -33,15 +33,16 @@ view: asset_themes {
   }
 
   dimension: asset_theme_id {
+    description: "The alphanumeric CMS Lite theme identifier."
     type: string
-    sql: ${TABLE}.asset_theme_id ;;
+    sql: COALESCE(${TABLE}.asset_theme_id,'') ;;
   }
 
   dimension: asset_subtheme_id {
     primary_key: yes
     description: "The alphanumeric CMS Lite subtheme identifier."
     type: string
-    sql:COALESCE(${TABLE}.asset_subtheme_id,'') ;;
+    sql: COALESCE(${TABLE}.asset_subtheme_id,'') ;;
   }
 
   dimension: asset_topic_id {
@@ -60,8 +61,9 @@ view: asset_themes {
   }
 
   dimension: asset_theme {
+    description: "The CMS Lite asset theme."
     type: string
-    sql: ${TABLE}.asset_theme ;;
+    sql: COALESCE(${TABLE}.asset_theme,'(no theme)') ;;
   }
 
   dimension: asset_subtheme {
