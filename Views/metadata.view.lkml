@@ -129,6 +129,12 @@ view: metadata {
     sql: ${TABLE}.title ;;
   }
 
+  measure: titles {
+    type: list
+    list_field: title
+  }
+
+
   dimension_group: updated {
     type: time
     timeframes: [

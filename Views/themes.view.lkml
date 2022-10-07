@@ -76,6 +76,21 @@ view: themes {
     suggest_dimension: themes_cache.topic
   }
 
+  dimension: bc_bid_guides_subtopic {
+    description: "The CMS Lite topic."
+    label: "Guides Category"
+    type: string
+    sql: CASE WHEN ${TABLE}.topic_id <> '77ACEDDA76064DED94930400EDD876BD' THEN NULL
+          WHEN ${TABLE}.subtopic_id IN ('39ABFF0F9D044082A2DC94CE3CD0C5A6',
+            '3C62FBAD49774604AC2165CE2C66858E','A9D1AC62146540F1AD11298C232BA5C4',
+            '71389F47C62B4BBF99BA47A8FC2EEE53','DD3D51FD26D44AAABCA705C8B96FB387') THEN ${TABLE}.subtopic
+            ELSE 'Other' END;;
+    group_label: "BC Bid Dimensions"
+  }
+
+
+
+
   dimension: topic_id {
     description: "The alphanumeric CMS Lite topic identifier."
     type: string
