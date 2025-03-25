@@ -58,6 +58,7 @@ view: metadata {
   dimension: lineage_nodes{
     type:  string
     sql: CONCAT(${TABLE}.ancestor_nodes,concat('|',concat(${TABLE}.parent_node_id,concat('|',${TABLE}.node_id)))) ;;
+    description: "The combination of all the nodes from top level to the node_id."
   }
 
   dimension_group: modified {
