@@ -55,6 +55,11 @@ view: metadata {
     sql: ${TABLE}.language_name ;;
   }
 
+  dimension: lineage_nodes{
+    type:  string
+    sql: CONCAT(${TABLE}.ancestor_nodes,concat('|',concat(${TABLE}.parent_node_id,concat('|',${TABLE}.node_id)))) ;;
+  }
+
   dimension_group: modified {
     type: time
     timeframes: [
