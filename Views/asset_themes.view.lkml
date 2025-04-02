@@ -86,6 +86,13 @@ view: asset_themes {
     sql: ${TABLE}.asset_subsubtopic ;;
   }
 
+  dimension: full_tree_nodes {
+    label: "Full Tree Nodes"
+    type:  string
+    sql:  ${TABLE}.full_tree_nodes ;;
+    description: "List of nodes from Theme to NodeID "
+  }
+
   measure: count {
     type: count
     drill_fields: [asset_subtheme_id, asset_subtheme_id, google_pdt.count, asset_themes.count]
