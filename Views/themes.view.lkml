@@ -88,8 +88,12 @@ view: themes {
     group_label: "BC Bid Dimensions"
   }
 
-
-
+  dimension: full_tree_nodes {
+    label: "Full Tree Nodes"
+    type:  string
+    sql:  ${TABLE}.full_tree_nodes ;;
+    description: "List of nodes from Theme to NodeID "
+  }
 
   dimension: topic_id {
     description: "The alphanumeric CMS Lite topic identifier."
